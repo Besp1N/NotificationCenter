@@ -17,4 +17,9 @@ internal sealed class UserRepository(AppDbContext db) : IUserRepository
         db.Users.Add(user);
         return Task.CompletedTask;
     }
+
+    public async Task<List<User>> GetAllUsersAsync(CancellationToken ct)
+    {
+        return await db.Users.ToListAsync(ct);
+    }
 }

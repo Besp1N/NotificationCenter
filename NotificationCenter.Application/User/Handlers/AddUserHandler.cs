@@ -10,12 +10,9 @@ namespace NotificationCenter.Application.User.Handlers;
 public class AddUserHandler(IUserRepository userRepository, IUnitOfWork unitOfWork)
     : IRequestHandler<AddUserCommand, Result<CreatedUserDto>>
 {
-    private readonly IUserRepository _userRepository = userRepository;
-    private readonly IUnitOfWork _unitOfWork = unitOfWork;
-
     public async Task<Result<CreatedUserDto>> Handle(AddUserCommand request, CancellationToken cancellationToken)
     {
-        var doesExists = await _userRepository.ExistsByEmailAsync(request.Email, cancellationToken);
+        var doesExists = await userRepository.ExistsByEmailAsync(request.Email, cancellationToken);
         if (doesExists)
             return Result<CreatedUserDto>.BadRequest("A user with the provided email already exists.");
 
@@ -26,8 +23,8 @@ public class AddUserHandler(IUserRepository userRepository, IUnitOfWork unitOfWo
             Email = request.Email
         };
         
-        await _userRepository.AddAsync(user, cancellationToken);
-        await _unitOfWork.SaveChangesAsync(cancellationToken);
+        await userRepository.AddAsync(user, cancellationToken);
+        await unitOfWork.SaveChangesAsync(cancellationToken);
 
         var createdUserDto = new CreatedUserDto
         {
