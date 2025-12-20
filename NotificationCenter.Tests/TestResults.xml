@@ -1,0 +1,14 @@
+<testsuites>
+  <testsuite name="NotificationCenter.Tests.dll" tests="1" skipped="0" failures="0" errors="0" time="0.0462392" timestamp="2025-11-14T20:30:03" hostname="Kacpers-MacBook-Air" id="0" package="NotificationCenter.Tests.dll">
+    <properties />
+    <testcase classname="NotificationCenter.Tests.Controller.UserControllerTests" name="GetUsers_ReturnsOkWithUserList_WhenUsersExist" time="0.0462392" />
+    <system-out>
+Test Framework Informational Messages:
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.3.1+6b60a9e56a (64-bit .NET 8.0.11)
+[xUnit.net 00:00:00.05]   Discovering: NotificationCenter.Tests
+[xUnit.net 00:00:00.06]   Discovered:  NotificationCenter.Tests
+[xUnit.net 00:00:00.06]   Starting:    NotificationCenter.Tests
+[xUnit.net 00:00:00.13]   Finished:    NotificationCenter.Tests
+</system-out>
+  </testsuite>
+</testsuites>

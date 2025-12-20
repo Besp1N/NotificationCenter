@@ -12,7 +12,9 @@
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
     <PackageReference Include="FluentAssertions" Version="8.7.1" />
+    <PackageReference Include="JunitXml.TestLogger" Version="7.0.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Moq" Version="4.20.72" />
     <PackageReference Include="xunit" Version="2.5.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
   </ItemGroup>
@@ -22,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NotificationCenter.Api\NotificationCenter.Api.csproj" />
     <ProjectReference Include="..\NotificationCenter.Application\NotificationCenter.Application.csproj" />
     <ProjectReference Include="..\NotificationCenter.Domain\NotificationCenter.Domain.csproj" />
   </ItemGroup>
